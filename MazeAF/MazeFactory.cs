@@ -1,18 +1,12 @@
-﻿using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
-using DocumentFormat.OpenXml.Wordprocessing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MazeLibrary;
 
 namespace MazeAF
 {
     internal class MazeFactory
     {
-        public virtual Room CreateRoom(int no)
+        public virtual Room CreateRoom(int roomNumber)
         {
-            return new Room(no);
+            return new Room(roomNumber);
         }
 
         public virtual Door CreateDoor(Room room1, Room room2)

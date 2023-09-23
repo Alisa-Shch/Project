@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MazeLibrary;
 
 namespace MazeAF
 {
     internal class MazeWithBombFactory : MazeFactory
     {
-        public override Room CreateRoom(int no)
+        public override Room CreateRoom(int roomNumber)
         {
-            return new RoomWithBomb(no);
+            return new RoomWithBomb(roomNumber);
         }
 
         public override Wall CreateWall()

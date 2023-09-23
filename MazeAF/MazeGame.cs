@@ -1,26 +1,20 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MazeLibrary;
 
 namespace MazeAF
 {
     internal class MazeGame
     {
-        public void MazeCreate()
+        public static Maze Create(MazeFactory factory)
         {
-            MazeFactory factory = new MazeFactory();
-            MazeFactory factoryW = new MazeWithBombFactory();
-
             Room r1 = factory.CreateRoom(1);
-            Room r2 = factoryW.CreateRoom(2);
+            Room r2 = factory.CreateRoom(2);
             Door door = factory.CreateDoor(r1, r2);
 
-            r1.Enter();
-            door.Enter();
-            door.OtherSideFrom(r1).Enter();
+            Maze maze = new();
+            maze.AddRoom(r1);
+            maze.AddRoom(r2);
+
+            return maze;
         }
     }
 }

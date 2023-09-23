@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MazeAF
+﻿namespace MazeLibrary
 {
-    internal class RoomWithA : Room
+    public class RoomWithTrap : Room
     {
-        static Random rnd = new Random();
+        private static Random Rnd = new();
 
-        internal readonly bool IsHungry;
+        private readonly bool _isHungry;
 
-        public RoomWithA(int roomNumber) : base(roomNumber)
+        public RoomWithTrap(int roomNumber) : base(roomNumber)
         {
-            IsHungry = rnd.Next(2) == 0 ? true : false;
+            _isHungry = Rnd.Next(2) == 0 ? true : false;
         }
 
         public override void Enter()
         {
             base.Enter();
             Console.WriteLine("В комнате тигр");
-            if (IsHungry)
+            if (_isHungry)
             {
                 Console.WriteLine("Он голоден и пытается вас съест");
             }

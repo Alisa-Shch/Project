@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MazeAF
+﻿namespace MazeAF
 {
     class Program
     {
         static void Main(string[] args)
         {
-            new MazeGame().MazeCreate();
-
-            Console.ReadLine();
+            var f1 = MazeGame.Create(new MazeFactory());
+            var f2 = MazeGame.Create(new MazeWithBombFactory());
+            var f3 = MazeGame.Create(new MazeWithTrapFactory());
         }
     }
 }
