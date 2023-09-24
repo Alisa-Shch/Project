@@ -9,9 +9,9 @@
             _rooms[room.Number] = room;
         }
 
-        public Room? RoomNo(int roomN)
+        public Room? RoomNo(int roomNumber)
         {
-            return _rooms.ContainsKey(roomN) ? _rooms[roomN] : null;
+            return _rooms.ContainsKey(roomNumber) ? _rooms[roomNumber] : null;
         }
     }
 }
