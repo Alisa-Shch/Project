@@ -4,30 +4,29 @@ namespace MazeLibrary
 {
     public class Door : IMapSite
     {
-        private static Random Rnd = new Random();
+        private static Random Rnd = new();
 
         private readonly bool _isOpen;
-
-        private readonly Room _Room1;
-        private readonly Room _Room2;
+        private readonly Room _room1;
+        private readonly Room _room2;
 
         public Door(Room room1, Room room2)
         {
-            _isOpen = Rnd.Next(2) == 0 ? true : false;
+            _isOpen = Rnd.Next(2) == 0;
 
-            _Room1 = room1;
-            _Room2 = room2;
+            _room1 = room1;
+            _room2 = room2;
         }
 
         public Room OtherSideFrom(Room room)
         {
-            if (room == _Room1)
+            if (room == _room1)
             {
-                return _Room2;
+                return _room2;
             }
-            else if (room == _Room2)
+            else if (room == _room2)
             {
-                return _Room1;
+                return _room1;
             }
             else
             {

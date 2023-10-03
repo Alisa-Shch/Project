@@ -4,7 +4,7 @@
     {
         internal int Number {  get; private set; }
 
-        private IMapSite[] _sides = new IMapSite[4];
+        protected IMapSite[] _sides = new IMapSite[4];
 
         public Room(int roomNumber)
         {

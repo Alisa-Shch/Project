@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            var f1 = MazeGame.Create(new MazeFactory());
-            var f2 = MazeGame.Create(new MazeWithBombFactory());
-            var f3 = MazeGame.Create(new MazeWithTrapFactory());
+            var factory1 = MazeGame.Create(new MazeFactory());
+            var factory2 = MazeGame.Create(new MazeWithBombFactory());
+            var factory3 = MazeGame.Create(new MazeWithTrapFactory());
         }
     }
 }

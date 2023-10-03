@@ -8,7 +8,7 @@
 
         public RoomWithTrap(int roomNumber) : base(roomNumber)
         {
-            _isHungry = Rnd.Next(2) == 0 ? true : false;
+            _isHungry = Rnd.Next(2) == 0;
         }
 
         public override void Enter()

@@ -4,18 +4,17 @@
     {
         private static Random Rnd = new();
 
-        private readonly bool _IsDestroyed;
+        private readonly bool _isDestroyed;
 
         public RoomWithBomb(int roomNumber) : base(roomNumber)
         {
-            _IsDestroyed = Rnd.Next(2) == 0 ? true : false;
-            WallWithBomb.SetIsDestroyed(_IsDestroyed);
+            _isDestroyed = Rnd.Next(2) == 0;
         }
 
         public override void Enter()
         {
             base.Enter();
-            if (_IsDestroyed)
+            if (_isDestroyed)
             {
                 Console.WriteLine("Бомба взорвалась");
             }

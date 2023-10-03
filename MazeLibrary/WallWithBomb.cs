@@ -2,16 +2,16 @@
 {
     public class WallWithBomb : Wall
     {
-        private static bool IsDestroyed;
+        private bool _isDestroyed;
 
-        public static void SetIsDestroyed(bool isDestroyed)
+        public void SetIsDestroyed(bool isDestroyed)
         {
-            IsDestroyed = isDestroyed;
+            _isDestroyed = isDestroyed;
         }
 
         public override void Enter()
         {
-            if (IsDestroyed)
+            if (_isDestroyed)
             {
                 Console.WriteLine("Стена разрушена");
             }
