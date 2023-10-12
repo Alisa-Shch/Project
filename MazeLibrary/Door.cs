@@ -12,6 +12,11 @@ namespace MazeLibrary
 
         public Door(Room room1, Room room2)
         {
+            if (room1 == null || room2 == null)
+            {
+                throw new ArgumentException("Комнаты не существует");
+            }
+
             _isOpen = Rnd.Next(2) == 0;
 
             _room1 = room1;

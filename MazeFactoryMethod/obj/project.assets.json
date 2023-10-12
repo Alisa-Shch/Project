@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "MazeLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MazeLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MazeLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MazeLibrary/1.0.0": {
+      "type": "project",
+      "path": "../MazeLibrary/MazeLibrary.csproj",
+      "msbuildProject": "../MazeLibrary/MazeLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "MazeLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Alisa\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Alisa\\OneDrive\\Документы\\.лабы\\2 курс\\С# ООП\\Maze\\MazeLibrary\\MazeLibrary.csproj": {
+              "projectPath": "C:\\Users\\Alisa\\OneDrive\\Документы\\.лабы\\2 курс\\С# ООП\\Maze\\MazeLibrary\\MazeLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

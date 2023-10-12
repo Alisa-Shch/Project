@@ -4,10 +4,15 @@
     {
         internal int Number {  get; private set; }
 
-        protected IMapSite[] _sides = new IMapSite[4];
+        private IMapSite[] _sides = new IMapSite[4];
 
         public Room(int roomNumber)
         {
+            if (roomNumber < 0)
+            {
+                throw new Exception("Комната с отрицательным номером не может существовать");
+            }
+
             Number = roomNumber;
         }
 
