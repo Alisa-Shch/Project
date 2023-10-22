@@ -24,5 +24,10 @@
                 Console.WriteLine("Он оказался сытым, вы в безопасности");
             }
         }
+
+        public override Room Clone()
+        {
+            return new RoomWithTrap(Number);
+        }
     }
 }

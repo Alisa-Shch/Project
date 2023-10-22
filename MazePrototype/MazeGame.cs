@@ -1,15 +1,15 @@
 ﻿using MazeLibrary;
 
-namespace MazeAF
+namespace MazePrototype
 {
-    public class MazeGame
+    internal class MazeGame
     {
-        public static Maze Create(MazeFactory factory)
+        public static Maze Create(Room roomPrototype, Door doorPrototype)
         {
-            Room room1 = factory.CreateRoom(1);
-            Room room2 = factory.CreateRoom(2);
-            Door door = factory.CreateDoor(room1, room2);
-            Wall wall = factory.CreateWall();
+            Room room1 = roomPrototype.Clone();
+            Room room2 = roomPrototype.Clone();
+            Door door = doorPrototype.Clone();
+            Wall wall = new();
 
             room1.SetSide(Direction.North, door);
             room1.SetSide(Direction.South, wall);
@@ -21,7 +21,7 @@ namespace MazeAF
             room2.SetSide(Direction.West, wall);
             room2.SetSide(Direction.North, wall);
 
-            Maze maze = factory.CreateMaze();
+            Maze maze = new();
             maze.AddRoom(room1);
             maze.AddRoom(room2);
 

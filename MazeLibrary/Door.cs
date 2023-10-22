@@ -7,18 +7,16 @@ namespace MazeLibrary
         private static Random Rnd = new();
 
         private readonly bool _isOpen;
-        private readonly Room _room1;
-        private readonly Room _room2;
+        private Room _room1;
+        private Room _room2;
 
         public Door(Room room1, Room room2)
         {
             if (room1 == null || room2 == null)
             {
-                throw new ArgumentException("Комнаты не существует");
+                throw new ArgumentNullException("Комнаты не существует");
             }
-
             _isOpen = Rnd.Next(2) == 0;
-
             _room1 = room1;
             _room2 = room2;
         }
@@ -35,7 +33,7 @@ namespace MazeLibrary
             }
             else
             {
-                throw new ArgumentException("Комнаты не существует");
+                throw new ArgumentException(nameof(room), "Комнаты не существует");
             }
         }
 
@@ -49,6 +47,21 @@ namespace MazeLibrary
             {
                 Console.WriteLine("Дверь закрыта");
             }
+        }
+
+        public Door Clone()
+        {
+            return new Door(_room1.Clone(), _room2.Clone());
+        }
+
+        public void Initialize(Room room1, Room room2)
+        {
+            if (room1 == null || room2 == null)
+            {
+                throw new ArgumentNullException("Комнаты не существует");
+            }
+            _room1 = room1;
+            _room2 = room2;
         }
     }
 }

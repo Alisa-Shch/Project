@@ -23,5 +23,10 @@
                 Console.WriteLine("Бомба не взорвалась");
             }
         }
+
+        public override Room Clone()
+        {
+            return new RoomWithBomb(Number);
+        }
     }
 }

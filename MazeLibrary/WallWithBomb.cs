@@ -20,5 +20,10 @@
                 base.Enter();
             }
         }
+
+        public override Wall Clone()
+        {
+            return new WallWithBomb();
+        }
     }
 }

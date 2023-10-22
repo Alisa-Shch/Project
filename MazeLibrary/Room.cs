@@ -10,9 +10,8 @@
         {
             if (roomNumber < 0)
             {
-                throw new Exception("Комната с отрицательным номером не может существовать");
+                throw new ArgumentOutOfRangeException(nameof(roomNumber), "Комната с отрицательным номером не может существовать");
             }
-
             Number = roomNumber;
         }
 
@@ -29,6 +28,20 @@
         public virtual void Enter()
         {
             Console.WriteLine($"Вы в комнате {Number}");
+        }
+
+        public virtual Room Clone()
+        {
+            return new Room(Number);
+        }
+
+        public void Initialize(int roomNumber)
+        {
+            if (roomNumber < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(roomNumber), "Комната с отрицательным номером не может существовать");
+            }
+            Number = roomNumber;
         }
     }
 }

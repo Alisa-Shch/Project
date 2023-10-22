@@ -4,12 +4,16 @@ namespace MazeFactoryMethod
 {
     internal class MazeWithBombGame : MazeGame
     {
-        public override Room CreateRoom(int roomNumber)
+        protected override Room CreateRoom(int roomNumber)
         {
+            if (roomNumber < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(roomNumber), "Комната с отрицательным номером не может существовать");
+            }
             return new RoomWithBomb(roomNumber);
         }
 
-        public override Wall CreateWall()
+        protected override Wall CreateWall()
         {
             return new WallWithBomb();
         }
