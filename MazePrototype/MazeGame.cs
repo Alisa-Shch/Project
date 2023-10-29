@@ -4,11 +4,11 @@ namespace MazePrototype
 {
     internal class MazeGame
     {
-        public static Maze Create(Room roomPrototype, Door doorPrototype)
+        public static Maze Create(Room roomPrototype)
         {
             Room room1 = roomPrototype.Clone();
             Room room2 = roomPrototype.Clone();
-            Door door = doorPrototype.Clone();
+            Door door = new(room1, room2);
             Wall wall = new();
 
             room1.SetSide(Direction.North, door);
