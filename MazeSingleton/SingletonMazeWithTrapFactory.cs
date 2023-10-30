@@ -6,7 +6,7 @@
 
         private SingletonMazeWithTrapFactory() { }
 
-        public new static SingletonMazeWithTrapFactory Instance
+        public static SingletonMazeWithTrapFactory Instance
         {
             get
             {

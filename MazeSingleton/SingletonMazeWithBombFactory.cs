@@ -6,7 +6,7 @@
 
         private SingletonMazeWithBombFactory() { }
 
-        public new static SingletonMazeWithBombFactory Instance
+        public static SingletonMazeWithBombFactory Instance
         {
             get
             {
