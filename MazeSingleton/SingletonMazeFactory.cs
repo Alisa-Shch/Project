@@ -6,7 +6,7 @@ namespace MazeSingleton
     {
         private static SingletonMazeFactory? _instance;
 
-        protected SingletonMazeFactory() { }
+        private SingletonMazeFactory() { }
 
         public static SingletonMazeFactory Instance
         {

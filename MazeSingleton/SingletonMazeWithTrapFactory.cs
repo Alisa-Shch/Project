@@ -1,6 +1,6 @@
 ﻿namespace MazeSingleton
 {
-    internal class SingletonMazeWithTrapFactory : SingletonMazeFactory
+    internal class SingletonMazeWithTrapFactory : MazeFactory
     {
         private static SingletonMazeWithTrapFactory? _instance;
 
