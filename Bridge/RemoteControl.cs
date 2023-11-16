@@ -4,13 +4,14 @@
     {
         private Dictionary<int, (int Power, int Mode)> dictionary = new Dictionary<int, (int Power, int Mode)>();
 
-        public RemoteControl(Implementor implementor) : base(implementor) { ArgumentNullException.ThrowIfNull(implementor); }
+        public RemoteControl(Implementor implementor) 
+            : base(implementor)  { }
 
         public void Save(int index)
         {
             if (index <= 0)
             {
-                throw new ArgumentException("index должен быть положительным числом", nameof(index));
+                throw new ArgumentException(nameof(index), "index должен быть больше 0");
             }
 
             dictionary[index] = (Power, Mode);
@@ -21,7 +22,7 @@
         {
             if (index <= 0)
             {
-                throw new ArgumentException("index должен быть положительным числом", nameof(index));
+                throw new ArgumentException(nameof(index), "index должен быть больше 0");
             }
 
             if (dictionary.ContainsKey(index))

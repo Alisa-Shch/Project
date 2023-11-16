@@ -16,7 +16,7 @@
         {
             if (power > 0)
             {
-                Console.WriteLine($"Мощность кондиционера установлена ​​на {power}");
+                Console.WriteLine($"Мощность кондиционера: {power}");
             }
             else
             {
@@ -28,7 +28,7 @@
         {
             if (mode > 0)
             {
-                Console.WriteLine($"Режим кондиционера установлен на {mode}");
+                Console.WriteLine($"Режим кондиционера: {mode}");
             }
             else
             {
