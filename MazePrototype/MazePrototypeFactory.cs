@@ -12,11 +12,15 @@ namespace MazePrototype
 
         protected MazePrototypeFactory(Maze maze, Room room, Wall wall, Door door)
         {
-            _prototypeMaze = maze.Initialize();
-            _prototypeRoom = room.Initialize();
-            _prototypeWall = wall.Initialize();
-            _prototypeDoor = door.Initialize();
+            _prototypeMaze = maze;
+            _prototypeRoom = room;
+            _prototypeWall = wall;
+            _prototypeDoor = door;
         }
+
+        public MazePrototypeFactory() 
+        : this(new Maze(), new Room(), new Wall(), new Door())
+        { }
 
         public override Maze CreateMaze()
         {
