@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MazeSingleton", "MazeSingle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{DF4C022E-D7F6-456F-AEA3-76A8528B84DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{4405FFD0-ECE4-481F-811B-35DBD110F6EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{4405FFD0-ECE4-481F-811B-35DBD110F6EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composite", "Composite\Composite.csproj", "{323172D6-640C-4C67-A7AB-10393E89E426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{E9EC5603-12B8-4591-86AA-8D9BFA699C53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{4405FFD0-ECE4-481F-811B-35DBD110F6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4405FFD0-ECE4-481F-811B-35DBD110F6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4405FFD0-ECE4-481F-811B-35DBD110F6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323172D6-640C-4C67-A7AB-10393E89E426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323172D6-640C-4C67-A7AB-10393E89E426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323172D6-640C-4C67-A7AB-10393E89E426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323172D6-640C-4C67-A7AB-10393E89E426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9EC5603-12B8-4591-86AA-8D9BFA699C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EC5603-12B8-4591-86AA-8D9BFA699C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EC5603-12B8-4591-86AA-8D9BFA699C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EC5603-12B8-4591-86AA-8D9BFA699C53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
