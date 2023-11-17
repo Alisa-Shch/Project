@@ -2,44 +2,44 @@
 {
     internal class Remote
     {
-        protected Implementor implementor { get; set; }
-        public int Power { get; set; }
-        public int Mode { get; set; }
+        protected IImplementor Implementor { get; private set; }
+        public int Power { get; private set; }
+        public int Mode { get; private set; }
 
-        public Remote(Implementor implementor)
+        public Remote(IImplementor implementor)
         {
             ArgumentNullException.ThrowIfNull(implementor);
-            this.implementor = implementor;
+            Implementor = implementor;
         }
 
         public void TurnOn()
         {
-            implementor.On();
+            Implementor.On();
         }
 
         public void TurnOff()
         {
-            implementor.Off();
+            Implementor.Off();
         }
 
         public virtual void PowerPlus()
         {
-            implementor.SetPower(++Power);
+            Implementor.SetPower(++Power);
         }
 
         public virtual void PowerMinus()
         {
-            implementor.SetPower(--Power);
+            Implementor.SetPower(--Power);
         }
 
         public virtual void ModeNext()
         {
-            implementor.SetMode(++Mode);
+            Implementor.SetMode(++Mode);
         }
 
         public virtual void ModePreview()
         {
-            implementor.SetMode(--Mode);
+            Implementor.SetMode(--Mode);
         }
     }
 }

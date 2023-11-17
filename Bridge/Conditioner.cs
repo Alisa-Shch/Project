@@ -1,18 +1,18 @@
 ﻿namespace Bridge
 {
-    internal class Conditioner : Implementor
+    internal class Conditioner : IImplementor
     {
-        public override void On()
+        public void On()
         {
             Console.WriteLine("Кондиционер включен");
         }
 
-        public override void Off()
+        public void Off()
         {
             Console.WriteLine("Кондиционер выключен");
         }
 
-        public override void SetPower(int power)
+        public void SetPower(int power)
         {
             if (power > 0)
             {
@@ -24,7 +24,7 @@
             }
         }
 
-        public override void SetMode(int mode)
+        public void SetMode(int mode)
         {
             if (mode > 0)
             {

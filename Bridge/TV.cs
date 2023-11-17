@@ -1,18 +1,18 @@
 ﻿namespace Bridge
 {
-    internal class TV : Implementor
+    internal class TV : IImplementor
     {
-        public override void On()
+        public void On()
         {
             Console.WriteLine("Телевизор включен");
         }
 
-        public override void Off()
+        public void Off()
         {
             Console.WriteLine("Телевизор выключен");
         }
 
-        public override void SetPower(int power)
+        public void SetPower(int power)
         {
             if (power > 0)
             {
@@ -24,7 +24,7 @@
             }
         }
 
-        public override void SetMode(int mode)
+        public void SetMode(int mode)
         {
 
             if (mode > 0)

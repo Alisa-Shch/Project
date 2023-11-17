@@ -1,4 +1,7 @@
-﻿namespace Decorator
+﻿using Decorator.сoffee;
+using Decorator.additions;
+
+namespace Decorator
 {
     internal class Program
     {

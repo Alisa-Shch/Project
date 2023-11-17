@@ -2,9 +2,9 @@
 {
     internal class RemoteControl : Remote
     {
-        private Dictionary<int, (int Power, int Mode)> dictionary = new Dictionary<int, (int Power, int Mode)>();
+        private Dictionary<int, (int Power, int Mode)> _dictionary = new Dictionary<int, (int Power, int Mode)>();
 
-        public RemoteControl(Implementor implementor) 
+        public RemoteControl(IImplementor implementor) 
             : base(implementor)  { }
 
         public void Save(int index)
@@ -14,7 +14,7 @@
                 throw new ArgumentException(nameof(index), "index должен быть больше 0");
             }
 
-            dictionary[index] = (Power, Mode);
+            _dictionary[index] = (Power, Mode);
             Console.WriteLine("Сохраненный режим {0}: Мощность {1}, Режим {2}", index, Power, Mode);
         }
 
@@ -25,16 +25,14 @@
                 throw new ArgumentException(nameof(index), "index должен быть больше 0");
             }
 
-            if (dictionary.ContainsKey(index))
+            if (_dictionary.ContainsKey(index))
             {
-                var d = dictionary[index];
+                var d = _dictionary[index];
                 int savedPower = d.Power;
                 int savedMode = d.Mode;
 
-                Power = savedPower;
-                Mode = savedMode;
-                implementor.SetPower(Power);
-                implementor.SetMode(Mode);
+                Implementor.SetPower(savedPower);
+                Implementor.SetMode(savedMode);
                 Console.WriteLine("Загруженный режим {0}: Мощность {1}, Режим {2}", index, Power, Mode);
             }
             else
