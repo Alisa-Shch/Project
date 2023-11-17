@@ -12,6 +12,11 @@ namespace MazePrototype
 
         protected MazePrototypeFactory(Maze maze, Room room, Wall wall, Door door)
         {
+            if (maze == null || room == null || wall == null || door == null)
+            {
+                throw new ArgumentNullException("Объект не существует");
+            }
+
             _prototypeMaze = maze;
             _prototypeRoom = room;
             _prototypeWall = wall;
@@ -19,8 +24,7 @@ namespace MazePrototype
         }
 
         public MazePrototypeFactory() 
-        : this(new Maze(), new Room(), new Wall(), new Door())
-        { }
+            : this(new Maze(), new Room(), new Wall(), new Door()) { }
 
         public override Maze CreateMaze()
         {
