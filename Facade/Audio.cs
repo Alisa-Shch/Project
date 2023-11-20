@@ -6,5 +6,10 @@
         {
             Console.WriteLine("Аудио система включена");
         }
+
+        public void Off()
+        {
+            Console.WriteLine("Аудио система выключена");
+        }
     }
 }

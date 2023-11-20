@@ -18,11 +18,15 @@
             tv.On();
             audio.On();
             dvd.In();
+            dvd.Play();
         }
 
         public void Off()
         {
             Console.WriteLine("Выключение домашнего кинотеатра");
+            tv.Off();
+            audio.Off();
+            dvd.Out();
         }
     }
 }
