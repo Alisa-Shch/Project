@@ -3,8 +3,6 @@
     internal class Remote
     {
         protected IImplementor Implementor { get; private set; }
-        public int Power { get; private set; }
-        public int Mode { get; private set; }
 
         public Remote(IImplementor implementor)
         {
@@ -24,22 +22,22 @@
 
         public virtual void PowerPlus()
         {
-            Implementor.SetPower(++Power);
+            Implementor.SetPower(Implementor.Power + 1);
         }
 
         public virtual void PowerMinus()
         {
-            Implementor.SetPower(--Power);
+            Implementor.SetPower(Implementor.Power - 1);
         }
 
         public virtual void ModeNext()
         {
-            Implementor.SetMode(++Mode);
+            Implementor.SetMode(Implementor.Mode + 1);
         }
 
         public virtual void ModePreview()
         {
-            Implementor.SetMode(--Mode);
+            Implementor.SetMode(Implementor.Mode - 1);
         }
     }
 }
