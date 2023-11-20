@@ -1,5 +1,5 @@
-﻿using Decorator.сoffee;
-using Decorator.additions;
+﻿using Decorator.CoffeeN;
+using Decorator.Additions;
 
 namespace Decorator
 {

@@ -1,8 +1,8 @@
-﻿namespace Decorator.сoffee
+﻿namespace Decorator.CoffeeN
 {
     internal class Cappuccino : Coffee
     {
-        public Cappuccino() 
+        public Cappuccino()
             : base("Капучино") { }
 
         public override double Price()

@@ -1,6 +1,6 @@
-﻿using Decorator.сoffee;
+﻿using Decorator.CoffeeN;
 
-namespace Decorator.additions
+namespace Decorator.Additions
 {
     internal class Sugar : Decorator
     {

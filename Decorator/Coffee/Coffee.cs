@@ -1,10 +1,10 @@
-﻿namespace Decorator.сoffee
+﻿namespace Decorator.CoffeeN
 {
     internal abstract class Coffee
     {
         private string _description;
 
-        public Coffee(string description) 
+        public Coffee(string description)
         {
             _description = description;
         }

@@ -1,4 +1,4 @@
-﻿using Decorator.сoffee;
+﻿using Decorator.CoffeeN;
 
 namespace Decorator
 {
