@@ -2,6 +2,9 @@
 {
     internal class Conditioner : IImplementor
     {
+        public int Power { get; private set; }
+        public int Mode { get; private set; }
+
         public void On()
         {
             Console.WriteLine("Кондиционер включен");
@@ -16,6 +19,7 @@
         {
             if (power > 0)
             {
+                Power = power;
                 Console.WriteLine($"Мощность кондиционера: {power}");
             }
             else
@@ -28,6 +32,7 @@
         {
             if (mode > 0)
             {
+                Mode = mode;
                 Console.WriteLine($"Режим кондиционера: {mode}");
             }
             else
