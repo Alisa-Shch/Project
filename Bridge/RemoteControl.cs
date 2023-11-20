@@ -2,7 +2,7 @@
 {
     internal class RemoteControl : Remote
     {
-        private Dictionary<int, (int Power, int Mode)> _dictionary = new Dictionary<int, (int Power, int Mode)>();
+        private Dictionary<int, (int Power, int Mode)> _dictionary = new();
 
         public RemoteControl(IImplementor implementor) 
             : base(implementor)  { }
@@ -27,12 +27,8 @@
 
             if (_dictionary.ContainsKey(index))
             {
-                var d = _dictionary[index];
-                int savedPower = d.Power;
-                int savedMode = d.Mode;
-
-                Implementor.SetPower(savedPower);
-                Implementor.SetMode(savedMode);
+                Implementor.SetPower(_dictionary[index].Power);
+                Implementor.SetMode(_dictionary[index].Mode);
                 Console.WriteLine("Загруженный режим {0}: Мощность {1}, Режим {2}", index, Power, Mode);
             }
             else
@@ -40,6 +36,5 @@
                 Console.WriteLine("Режим с индексом {0} не найден.", index);
             }
         }
-
     }
 }
