@@ -1,28 +1,31 @@
-﻿using System.Collections;
-
-namespace Composite
+﻿namespace Composite
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            PancakeMenu pancakeMenu = new();
-            List<Menu> breakfastItems = pancakeMenu.getMenuItems();
+            var waffles = new MenuItem("Вафли с клубникой", false);
+            var borsch = new MenuItem("Борщ", false);
+            var barbecue = new MenuItem("Шашлык из курицы", false);
+            var pancakes = new MenuItem("Блинчики с черникой", true);
 
-            DinerMenu diner = new();
-            Menu[] lunchItems = diner.getMenuItems();
+            var meatSection = new MenuSection("Мясо");
+            meatSection.Add(barbecue);
 
-            for (int i = 0; i < breakfastItems.Count; i++)
-            {
-                Menu menuItem = breakfastItems[i];
-                Console.WriteLine($"{menuItem.getName()}: {menuItem.getDescription()} \t{menuItem.getPrice()}");
-            }
+            var soupsSection = new MenuSection("Супы");
+            soupsSection.Add(borsch);
 
-            for (int i = 0; i < lunchItems.Length; i++)
-            {
-                Menu menuItem = lunchItems[i];
-                Console.WriteLine($"{menuItem.getName()}: {menuItem.getDescription()} \t{menuItem.getPrice()}");
-            }
+            var dessertsSection = new MenuSection("Десерты");
+            dessertsSection.Add(pancakes);
+            dessertsSection.Add(waffles);
+
+            var menu = new Menu("Ресторан");
+            menu.Add(meatSection);
+            menu.Add(soupsSection);
+            menu.Add(dessertsSection);
+
+            menu.Print();
+            Console.ReadLine();
         }
     }
 }
