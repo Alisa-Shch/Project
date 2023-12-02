@@ -4,7 +4,7 @@
     {
         public void OnEvent()
         {
-            Console.WriteLine("Сегодня ...");
+
         }
     }
 }

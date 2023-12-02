@@ -1,15 +1,24 @@
-﻿namespace Mediator
+﻿using Mediator.Request;
+
+namespace Mediator
 {
     internal class Sprinkler
     {
-        public void Check(CalendarRequest calendarRequest)
+        public void Check(CalendarRequest request)
         {
-            Console.WriteLine($"Проверка даты включения разбрызгивателя: {calendarRequest.date}");
+            if (request is CalendarEventRequest)
+            {
+                Console.WriteLine($"Проверка даты включения разбрызгивателя: {request.date}");
+            }
+            else if (request is NewDayRequest)
+            {
+                Console.WriteLine("Наступил новый день");
+            }
         }
 
-        public void Check(AlarmRequest alarmRequest)
+        public void Check(AlarmRequest request)
         {
-            Console.WriteLine($"Проверка времени включения разбрызгивателя: {alarmRequest.time}");
+            Console.WriteLine($"Проверка времени включения разбрызгивателя: {request.time}");
         }
     }
 }

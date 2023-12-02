@@ -1,4 +1,6 @@
-﻿namespace Mediator
+﻿using Mediator.Request;
+
+namespace Mediator
 {
     internal class CalendarMediator : IMediator
     {
@@ -13,13 +15,14 @@
             _sprinkler = sprinkler;
         }
 
-        public void Execute()
+        public void Execute(IRequest request)
         {
-            CalendarRequest request = new();
-
-            _calendar.OnEvent();
-            _coffeePot.Check(request);
-            _sprinkler.Check(request);
+            if (request is CalendarRequest calendarRequest)
+            {
+                _calendar.OnEvent();
+                _coffeePot.Check(calendarRequest);
+                _sprinkler.Check(calendarRequest);
+            }
         }
     }
 }

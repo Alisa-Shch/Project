@@ -1,7 +1,9 @@
-﻿namespace Mediator
+﻿using Mediator.Request;
+
+namespace Mediator
 {
     internal interface IMediator
     {
-        public void Execute();
+        public void Execute(IRequest request);
     }
 }

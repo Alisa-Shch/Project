@@ -1,15 +1,24 @@
-﻿namespace Mediator
+﻿using Mediator.Request;
+
+namespace Mediator
 {
     internal class CoffeePot
     {
-        public void Check(CalendarRequest calendarRequest)
+        public void Check(CalendarRequest request)
         {
-            Console.WriteLine($"Проверка даты для приготовления кофе: {calendarRequest.date}");
+            if (request is CalendarEventRequest)
+            {
+                Console.WriteLine($"Проверка даты для приготовления кофе: {request.date}");
+            }
+            else if (request is NewDayRequest)
+            {
+                Console.WriteLine("Наступил новый день");
+            }
         }
 
-        public void Check(AlarmRequest alarmRequest)
+        public void Check(AlarmRequest request)
         {
-            Console.WriteLine($"Проверка времени для приготовления кофе: {alarmRequest.time}");
+            Console.WriteLine($"Проверка времени для приготовления кофе: {request.time}");
         }
     }
 }

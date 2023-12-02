@@ -1,4 +1,6 @@
-﻿namespace Mediator
+﻿using Mediator.Request;
+
+namespace Mediator
 {
     internal class AlarmMediator : IMediator
     {
@@ -13,13 +15,14 @@
             _sprinkler = sprinkler;
         }
 
-        public void Execute()
+        public void Execute(IRequest request)
         {
-            AlarmRequest request = new();
-
-            _alarm.OnEvent();
-            _coffeePot.Check(request);
-            _sprinkler.Check(request);
+            if (request is AlarmRequest alarmRequest)
+            {
+                _alarm.OnEvent();
+                _coffeePot.Check(alarmRequest);
+                _sprinkler.Check(alarmRequest);
+            }
         }
     }
 }
