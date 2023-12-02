@@ -6,9 +6,14 @@ namespace Mediator
     {
         public void Check(CalendarRequest request)
         {
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
             if (request is CalendarEventRequest)
             {
-                Console.WriteLine($"Проверка даты для приготовления кофе: {request.date}");
+                Console.WriteLine($"Проверка даты для приготовления кофе: {request.Date}");
             }
             else if (request is NewDayRequest)
             {
@@ -18,7 +23,12 @@ namespace Mediator
 
         public void Check(AlarmRequest request)
         {
-            Console.WriteLine($"Проверка времени для приготовления кофе: {request.time}");
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
+            Console.WriteLine($"Проверка времени для приготовления кофе: {request.Time}");
         }
     }
 }

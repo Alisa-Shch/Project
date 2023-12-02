@@ -2,6 +2,6 @@
 {
     internal class NewDayRequest : CalendarRequest
     {
-        public NewDayRequest(DateOnly date) : base(date) { }
+        public NewDayRequest() : base(new DateOnly()) { }
     }
 }
