@@ -7,9 +7,7 @@
 
         public File(string path)
         {
-            _ = path ?? throw new ArgumentNullException(nameof(path), "Путь пуст");
-
-            _path = path;
+            _path = path ?? throw new ArgumentNullException(nameof(path), "Путь пуст");
             _reader = new StreamReader(_path);
         }
 

@@ -7,9 +7,7 @@
 
         public FileProxy(string path)
         {
-            _ = path ?? throw new ArgumentNullException(nameof(path), "Путь пуст");
-
-            _path = path;
+            _path = path ?? throw new ArgumentNullException(nameof(path), "Путь пуст");
             _file = new File(_path);
         }
 

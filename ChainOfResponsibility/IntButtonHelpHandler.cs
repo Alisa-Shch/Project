@@ -7,20 +7,29 @@
 
         protected override bool IsRequest(HelpRequest request)
         {
-            _ = request ?? throw new ArgumentNullException(nameof(request), "Пустое значение");
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
             return char.IsDigit(request.Sign);
         }
 
         protected override string HelpString(HelpRequest request)
         {
-            _ = request ?? throw new ArgumentNullException(nameof(request));
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
             return $"Это кнопка для цифры '{request.Sign}'";
         }
 
         protected override string DefaultHelpString(HelpRequest request)
         {
-            _ = request ?? throw new ArgumentNullException(nameof(request));
-            return $"Вы нажимаете на числовую кнопку";
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+            return "Вы нажимаете на числовую кнопку";
         }
     }
 }
