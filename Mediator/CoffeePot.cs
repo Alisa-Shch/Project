@@ -11,13 +11,20 @@ namespace Mediator
                 throw new ArgumentNullException(nameof(request));
             }
 
-            if (request is CalendarEventRequest)
+            if (request is NewDayRequest)
             {
-                Console.WriteLine($"Проверка даты для приготовления кофе: {request.Date}");
-            }
-            else if (request is NewDayRequest)
-            {
-                Console.WriteLine("Наступил новый день");
+                switch (request.Date.DayOfWeek)
+                {
+                    case DayOfWeek.Saturday:
+                    case DayOfWeek.Sunday: Console.WriteLine("Сегодня выходной");
+                        break;
+                    default: Console.WriteLine("Сегодня будний день");
+                        if (DateTime.Now.Hour < 12)
+                        {
+                            Console.WriteLine("Кофе готовится");
+                        }
+                        break;
+                }
             }
         }
 
@@ -28,7 +35,7 @@ namespace Mediator
                 throw new ArgumentNullException(nameof(request));
             }
 
-            Console.WriteLine($"Проверка времени для приготовления кофе: {request.Time}");
+            Console.WriteLine($"Кофе будет готов в {request.Time}");
         }
     }
 }

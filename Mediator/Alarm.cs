@@ -11,13 +11,9 @@ namespace Mediator
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public void OnEvent(AlarmRequest request)
+        public void OnEvent()
         {
-            if (request == null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
-            _mediator.Execute(request);
+            _mediator.Execute(new AlarmRequest(new TimeOnly(9, 30)));
         }
     }
 }

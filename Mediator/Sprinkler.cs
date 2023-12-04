@@ -13,11 +13,7 @@ namespace Mediator
 
             if (request is CalendarEventRequest)
             {
-                Console.WriteLine($"Проверка даты включения разбрызгивателя: {request.Date}");
-            }
-            else if (request is NewDayRequest)
-            {
-                Console.WriteLine("Наступил новый день");
+                Console.WriteLine($"Разбрызгиватель будет включен {request.Date}");
             }
         }
 
@@ -28,7 +24,7 @@ namespace Mediator
                 throw new ArgumentNullException(nameof(request));
             }
 
-            Console.WriteLine($"Проверка времени включения разбрызгивателя: {request.Time}");
+            Console.WriteLine($"Разбрызгиватель будет включен в {request.Time}");
         }
     }
 }
