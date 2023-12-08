@@ -20,9 +20,12 @@ namespace Mediator
                 throw new ArgumentNullException(nameof(request));
             }
 
-            if (request is CalendarRequest calendarRequest)
+            if (request is NewDayRequest newDayRequest)
             {
-                _coffeePot.Check(calendarRequest);
+                _coffeePot.Check(newDayRequest);
+            }
+            if (request is CalendarEventRequest calendarRequest)
+            {
                 _sprinkler.Check(calendarRequest);
             }
         }

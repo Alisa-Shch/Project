@@ -4,26 +4,24 @@ namespace Mediator
 {
     internal class CoffeePot
     {
-        public void Check(CalendarRequest request)
+        public void Check(NewDayRequest request)
         {
             if (request == null)
             {
                 throw new ArgumentNullException(nameof(request));
             }
 
-            if (request is NewDayRequest)
+            var day = request.Date.DayOfWeek;
+            if (day == DayOfWeek.Saturday || day == DayOfWeek.Sunday)
             {
-                switch (request.Date.DayOfWeek)
+                Console.WriteLine("Сегодня выходной");
+            }
+            else
+            {
+                Console.WriteLine("Сегодня будний день");
+                if (DateTime.Now.Hour < 12)
                 {
-                    case DayOfWeek.Saturday:
-                    case DayOfWeek.Sunday: Console.WriteLine("Сегодня выходной");
-                        break;
-                    default: Console.WriteLine("Сегодня будний день");
-                        if (DateTime.Now.Hour < 12)
-                        {
-                            Console.WriteLine("Кофе готовится");
-                        }
-                        break;
+                    Console.WriteLine("Кофе готовится");
                 }
             }
         }
