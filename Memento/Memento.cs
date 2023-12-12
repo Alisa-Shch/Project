@@ -1,17 +1,7 @@
 ﻿namespace MementoN
 {
-    internal class Memento
+    internal interface Memento
     {
-        private DateTime _date;
-
-        public Memento()
-        {
-            _date = DateTime.Now;
-        }
-
-        public DateTime GetDate()
-        {
-            return _date;
-        }
+        DateTime GetDate();
     }
 }
