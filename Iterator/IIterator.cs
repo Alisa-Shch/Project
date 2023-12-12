@@ -2,7 +2,7 @@
 {
     internal interface IIterator<T>
     {
-        public bool HasNext();
-        public T Next();
+        bool HasNext();
+        T Next();
     }
 }

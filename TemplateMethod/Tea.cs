@@ -11,10 +11,5 @@
         {
             Console.WriteLine("Добавляем лимон");
         }
-
-        protected override bool IsAddish()
-        {
-            return true;
-        }
     }
 }
