@@ -2,21 +2,20 @@
 {
     internal class Remote
     {
-        private Dictionary<int, ICommand> _commands = new();
+        private Dictionary<int, (ICommand, ICommand)> _commands = new();
         private Stack<ICommand> _undo = new();
 
         public void Add(int number, ICommand remult, ICommand undo)
         {
-            _commands.Add(number, remult);
-            _undo.Push(undo);
+            _commands.Add(number, (remult, undo));
         }
 
         public void Execute(int number)
         {
             if (_commands.ContainsKey(number))
             {
-                ICommand remult = _commands[number];
-                remult.Execute();
+                _commands[number].Item1.Execute();
+                _undo.Push(_commands[number].Item2);
             }
             else
             {
@@ -28,9 +27,7 @@
         {
             if (_undo.Count > 0)
             {
-
-                ICommand command = _undo.Pop();
-                command.Execute();
+                _undo.Pop().Execute();
             }
             else
             {
