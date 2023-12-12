@@ -1,6 +1,6 @@
 ﻿namespace Composite
 {
-    internal class MenuSection : MenuComponent
+    public class MenuSection : MenuComponent
     {
         private readonly List<MenuComponent> _menuComponents = new();
         private string _name;

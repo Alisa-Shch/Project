@@ -1,20 +1,20 @@
 ﻿namespace Composite
 {
-    internal class MenuItem : MenuComponent
+    public class MenuItem : MenuComponent
     {
-        private string _name;
-        private bool _isVegan;
+        public string Name { get; private set; }
+        public bool IsVegan { get; private set; }
 
         public MenuItem(string name, bool isVegan)
         {
-            _name = name;
-            _isVegan = isVegan;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            IsVegan = isVegan;
         }
 
         public override void Print()
         {
-            string isVegan = _isVegan ? "(Веганское блюдо)" : "";
-            Console.WriteLine($"- {_name} {isVegan}");
+            string isVegan = IsVegan ? "(Веганское блюдо)" : "";
+            Console.WriteLine($"- {Name} {isVegan}");
         }
 
         public override void Add(MenuComponent component)

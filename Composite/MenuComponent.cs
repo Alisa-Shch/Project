@@ -1,6 +1,6 @@
 ﻿namespace Composite
 {
-    internal abstract class MenuComponent
+    public abstract class MenuComponent
     {
         public abstract void Print();
 
