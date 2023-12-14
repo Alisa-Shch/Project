@@ -1,20 +1,20 @@
-﻿namespace MementoN
+﻿namespace Memento
 {
     internal class Store
     {
-        private List<Memento> _mementos;
+        private List<IMemento> _mementos;
 
         public Store()
         {
             _mementos = new();
         }
 
-        public void Add(Memento memento)
+        public void Add(IMemento memento)
         {
             _mementos.Add(memento);
         }
 
-        public Memento Previous()
+        public IMemento Previous()
         {
             if (_mementos.Count > 0)
             {
@@ -26,9 +26,9 @@
             }
         }
 
-        public Memento GetByDate(DateTime date)
+        public IMemento GetByDate(DateTime date)
         {
-            Memento ?memento = _mementos.FirstOrDefault(m => m.GetDate() == date);
+            IMemento ?memento = _mementos.FirstOrDefault(m => m.GetDate() == date);
 
             if (memento != null)
             {

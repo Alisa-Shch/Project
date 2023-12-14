@@ -2,30 +2,30 @@
 {
     internal abstract class Duck
     {
-        public IFly FlyBehavior {  get; private set; }
-        public IQuack QuackBehavior { get; private set; }
-        public ISwim SwimBehavior { get; private set; }
+        private IFly _flyBehavior;
+        private IQuack _quackBehavior;
+        private ISwim _swimBehavior;
 
         protected Duck(IFly fly, IQuack quack, ISwim swim)
         {
-            FlyBehavior = fly;
-            QuackBehavior = quack;
-            SwimBehavior = swim;
+            _flyBehavior = fly;
+            _quackBehavior = quack;
+            _swimBehavior = swim;
         }
 
         public void Quack()
         {
-            QuackBehavior.Execute();
+            _quackBehavior.Execute();
         }
 
         public void Fly()
         {
-            FlyBehavior.Execute();
+            _flyBehavior.Execute();
         }
 
         public void Swim()
         {
-            SwimBehavior.Execute();
+            _swimBehavior.Execute();
         }
     }
 }

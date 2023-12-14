@@ -1,6 +1,6 @@
-﻿namespace MementoN
+﻿namespace Memento
 {
-    internal class TextEditorMemento : Memento
+    internal class TextEditorMemento : IMemento
     {
         private string _text;
         private DateTime _date;

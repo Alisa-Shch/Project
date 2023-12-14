@@ -1,4 +1,4 @@
-﻿namespace MementoN
+﻿namespace Memento
 {
     internal class TextEditor
     {
@@ -9,7 +9,7 @@
             _text = string.Empty;
         }
 
-        public TextEditor(Memento memento)
+        public TextEditor(IMemento memento)
         {
             if (memento is TextEditorMemento texEditorMemento)
             {
@@ -26,7 +26,7 @@
             return _text;
         }
 
-        public Memento CreateMemento()
+        public IMemento CreateMemento()
         {
             return new TextEditorMemento(_text);
         }

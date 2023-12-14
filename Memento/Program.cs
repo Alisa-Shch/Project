@@ -1,4 +1,4 @@
-﻿namespace MementoN
+﻿namespace Memento
 {
     internal class Program
     {
@@ -10,12 +10,12 @@
             TextEditor editor = new(textEditor);
             TextEditor editor2 = new(textEditor2);
 
-            Memento editorMemento = editor.CreateMemento();
-            Memento editorMemento1 = editor2.CreateMemento();
+            IMemento editorMemento = editor.CreateMemento();
+            IMemento editorMemento1 = editor2.CreateMemento();
 
             Store store = new();
             store.Add(editorMemento);
-            Memento previousMemento = store.Previous();
+            IMemento previousMemento = store.Previous();
             store.Add(editorMemento1);
 
             TextEditor restoredEditor = new(previousMemento);            
